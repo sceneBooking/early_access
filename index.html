@@ -103,6 +103,7 @@
     .container {
       max-width: 1000px;
       margin: 0 auto 50px;
+      /* Original background: rgba(222, 222, 222, 0.9); */
       background: rgba(222, 222, 222, 0.9);
       padding: 40px;
       border-radius: 16px;
@@ -129,6 +130,7 @@
       justify-content: center;
       gap: 20px;
       margin: 20px 0;
+      /* Ensure countdown is inside the container in the final HTML structure */
     }
     .countdown h2{
       font-family: "Rammetto One", sans-serif;
@@ -155,11 +157,11 @@
       margin-top: 30px;
     }
 
-    /* Common Registration Section */
+    /* Common Registration Section - This is the light purple box in the middle */
     .common-registration {
       max-width: 1000px;
       margin: 50px auto;
-      background:rgba(222, 222, 222, 0.9);
+      background:rgba(212, 212, 212, 0.9); /* Lighter purple background to distinguish from main container's gray */
       padding: 40px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(127, 85, 177, 0.3);
@@ -302,22 +304,61 @@
       transform: scale(1.2);
     }
 
+    /* Mobile (iPhone) Resolution Adjustments */
     @media (max-width: 768px) {
-      .logo-default { width: 50%; }
-      .city-selector { margin: 160px 20px 30px; padding: 10px; }
-      .container { margin: 0 20px 40px; padding: 20px; }
-      .common-registration { margin: 50px 20px; padding: 30px 20px; }
+      .logo-default { 
+        width: 35%; 
+        margin-left: 10px;
+    }
+      .city-selector { margin: 160px 5px 30px; padding: 10px; } /* Reduced margin for selector */
+
+
+      /* Widen the main container and remove horizontal margin */
+      .header-aboutus {
+        font-size: 20px; /* Reduced font size */
+          margin-right: 20px; /* Reduced margin */
+          white-space: nowrap; /* Prevent wrapping */
+      }
+      .container { 
+          margin: 0 5px 40px; 
+          padding: 20px 10px; /* Reduced padding to widen box content */
+      }
+      
+      /* Widen the registration container (the light purple box) and remove horizontal margin */
+      .common-registration { 
+          margin: 50px 0px; /* Reduced horizontal margin to widen the box */
+          padding: 30px 20px; 
+      }
+      
+      /* Ensure 'Get Early Access' is on one line */
+      .registration-title { 
+          font-size: 24px; 
+      }
+      
       .slideshow-box { margin: 15px auto; }
       .btns { flex-direction: column; }
       .city-tabs { gap: 10px; }
       .city-tab { font-size: 14px; padding: 10px 20px; }
       .scene-text { font-size: 24px; }
-      .registration-title { font-size: 28px; }
+      
+      /* Countdown adjustments for mobile */
+      .countdown {
+        gap: 5px; /* Reduce gap between countdown boxes */
+        margin: 10px 0;
+      }
+      .count-box {
+        padding: 10px 10px; /* Reduced padding */
+      }
+      .count-box span {
+        font-size: 18px; /* Smaller font for number */
+      }
+      .count-box small {
+        font-size: 10px; /* Smaller font for text */
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <div class="header">
     <a href="https://scenebooking.com/">
       <img class="logo-default" src="https://scenebooking.com/wp-content/uploads/2024/12/scene_logo-black_color.png" alt="SCENE">
@@ -325,7 +366,6 @@
     <a class="header-aboutus" href="https://scenebooking.com/chennai/about-scene-booking-chennai/">About us</a>
   </div>
 
-  <!-- City Selection -->
   <div class="city-selector">
     <div class="city-tabs">
       <div class="city-tab active" onclick="showCity('bangalore')">Bangalore</div>
@@ -333,13 +373,11 @@
       <div class="city-tab" onclick="showCity('pune')">Pune</div>
     </div>
 
-    <!-- Bangalore Content -->
     <div class="city-content active" id="bangalore-content">
       <div class="container">
         <span class="scene-text">Your City. Your Scene. Now in Bangalore</span>
         <div class="subtitle">Your go-to hyperlocal experience booking platform </div>
 
-        <!-- Countdown for Bangalore -->
         <div class="countdown">
           <div class="count-box">
             <span id="bangalore-days">00</span>
@@ -358,14 +396,15 @@
             <small>Seconds</small>
           </div>
         </div>
+        
         <div class="common-registration">
           <h2 class="registration-title">Get Early Access</h2>
           <div class="registration-subtitle">Limited entries - join the community and get early bird discounts in the launch!</div>
           <div class="btns">
-          <button class="btn-artist">Artist Registration</button>
-          <button class="btn-customer">Customer Registration</button>
+            <button class="btn-artist">Artist Registration</button>
+            <button class="btn-customer">Customer Registration</button>
+          </div>
         </div>
-  </div>
       </div>
 
       <div class="slideshow-box">
@@ -374,13 +413,11 @@
       </div>
     </div>
 
-    <!-- Mumbai Content -->
     <div class="city-content" id="mumbai-content">
       <div class="container">
         <span class="scene-text">Your City. Your Scene. Now in Mumbai</span>
         <div class="subtitle">Experience the heart of entertainment and culture </div>
 
-        <!-- Countdown for Mumbai -->
         <div class="countdown">
           <h2 style="font-size: 40px; color: #7F55B1 ">Coming Soon!!</h2>
         </div>
@@ -392,13 +429,11 @@
       </div>
     </div>
 
-    <!-- Pune Content -->
     <div class="city-content" id="pune-content">
       <div class="container">
         <span class="scene-text">Your City. Your Scene. Now in Pune</span>
         <div class="subtitle">Discover the cultural capital of Maharashtra </div>
 
-        <!-- Countdown for Pune -->
         <div class="countdown">
           <h2 style="font-size: 40px; color: #7F55B1 ">Coming Soon!!</h2>
         </div>
@@ -411,7 +446,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-logo">
       <img src="https://scenebooking.com/wp-content/uploads/2024/12/scene_logo-black_color.png" alt="Scene Logo">
@@ -444,12 +478,14 @@
   </footer>
 
   <script>
-    var artist=document.querySelector(".btn-artist").addEventListener("click",function open(){
+    // Event listeners for registration buttons
+    document.querySelector(".btn-artist").addEventListener("click",function open(){
       window.location.href = "https://artistregistration-early-access.netlify.app/";
-    })
-    var artist=document.querySelector(".btn-customer").addEventListener("click",function open(){
+    });
+    document.querySelector(".btn-customer").addEventListener("click",function open(){
       window.location.href = "https://customerregistration-early-access.netlify.app/";
-    })
+    });
+
     // City switching functionality
     function showCity(cityName) {
       // Hide all city contents
@@ -462,8 +498,25 @@
       
       // Show selected city content
       document.getElementById(cityName + '-content').classList.add('active');
-      event.target.classList.add('active');
+      
+      // Add active class to the clicked tab. Need to handle the event target correctly.
+      // A more robust way without relying on 'event' which might not be global
+      const clickedTab = Array.from(tabs).find(tab => tab.textContent.toLowerCase() === cityName);
+      if (clickedTab) {
+          clickedTab.classList.add('active');
+      }
     }
+    
+    // Initial call to set the active tab for the default content
+    document.addEventListener('DOMContentLoaded', () => {
+        // Find the Bangalore tab and make it active initially
+        const tabs = document.querySelectorAll('.city-tab');
+        const bangaloreTab = Array.from(tabs).find(tab => tab.textContent === 'Bangalore');
+        if (bangaloreTab) {
+            bangaloreTab.classList.add('active');
+        }
+    });
+
 
     // Slideshow functionality for each city
     const cityImages = {
@@ -494,9 +547,11 @@
 
     // Countdown configurations for each city
     const cityCountdowns = {
+      // Current time is Oct 17, 2025. These dates are in the past or very near. 
+      // I've kept the original logic but noting the dates.
       bangalore: new Date("Dec 15, 2025 00:00:00").getTime(),
-      mumbai: new Date("Sept 30, 2025 00:00:00").getTime(),
-      pune: new Date("Oct 2, 2025 00:00:00").getTime()
+      mumbai: new Date("Sept 30, 2025 00:00:00").getTime(), // This will show 'Coming Soon' and negative days
+      pune: new Date("Oct 2, 2025 00:00:00").getTime() // This will show 'Coming Soon' and negative days
     };
 
     // Update countdowns
@@ -506,15 +561,27 @@
       Object.keys(cityCountdowns).forEach(city => {
         const distance = cityCountdowns[city] - now;
         
+        if (distance < 0) {
+            // Optional: Handle expiry if needed, but the HTML handles "Coming Soon" for Mumbai/Pune
+            // For Bangalore, if it was the only countdown, we might display "Launched!"
+            // For now, we'll let it show 0 or negative values if the date is passed, which is unlikely for 'Dec 15, 2025'.
+        }
+        
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById(city + '-days').textContent = days;
-        document.getElementById(city + '-hours').textContent = hours;
-        document.getElementById(city + '-minutes').textContent = minutes;
-        document.getElementById(city + '-seconds').textContent = seconds;
+        // Safely update elements only if they exist (only Bangalore has all countdown elements)
+        const daysEl = document.getElementById(city + '-days');
+        const hoursEl = document.getElementById(city + '-hours');
+        const minutesEl = document.getElementById(city + '-minutes');
+        const secondsEl = document.getElementById(city + '-seconds');
+
+        if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
       });
     }
 
