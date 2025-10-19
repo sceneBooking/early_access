@@ -44,12 +44,21 @@
       color: #000;
       text-decoration: none;
     }
+    .selectcity{
+      font-size: clamp(24px, 5vw, 40px);
+      margin-top: 80px;
+      margin-bottom: 20px;
+      font-family: "Rammetto One", sans-serif;
+      font-weight: 600;
+      text-align: center;
+    }
 
     /* City Selection */
     .city-selector {
       max-width: 1000px;
       margin: 120px auto 30px;
       padding: 20px;
+      margin-top: 0;
       text-align: center;
     }
 
@@ -308,14 +317,22 @@
     @media (max-width: 768px) {
       .logo-default { 
         width: 35%; 
-        margin-left: 10px;
+        margin-left: 0;
     }
-      .city-selector { margin: 160px 5px 30px; padding: 10px; } /* Reduced margin for selector */
+      .city-selector { margin: 160px 5px 30px; padding: 10px; 
+      margin-top: 0;} /* Reduced margin for selector */
 
+      .selectcity {
+        font-size: clamp(18px, 4vw, 28px);
+        margin-left: 0;
+        text-align: center;
+        padding: 0 10px;
+        font-size: 30px;
+      }
 
       /* Widen the main container and remove horizontal margin */
       .header-aboutus {
-        font-size: 20px; /* Reduced font size */
+        font-size: 17px; /* Reduced font size */
           margin-right: 20px; /* Reduced margin */
           white-space: nowrap; /* Prevent wrapping */
       }
@@ -365,6 +382,7 @@
     </a>
     <a class="header-aboutus" href="https://scenebooking.com/chennai/about-scene-booking-chennai/">About us</a>
   </div>
+  <h2 class="selectcity">Select your city</h2>
 
   <div class="city-selector">
     <div class="city-tabs">
